@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    textarea {
+      width: 90%;
+      height: 150px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🗣️ Text to Speech Converter</h1>
+  <form id="ttsForm">
+    <textarea name="text" id="text" placeholder="Enter text here..." required></textarea><br>
+    <button type="submit">Convert to Speech</button>
+  </form>
+
+  <audio id="audioPlayer" controls style="display:none;"></audio>
+
+  <script>
+    const form = document.getElementById("ttsForm");
+    const audioPlayer = document.getElementById("audioPlayer");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = document.getElementById("text").value;
+
+      const response = await fetch("https://8kxj9pocja.execute-api.us-east-1.amazonaws.com/texttospeech", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text })
+      });
+
+      const data = await response.json();
+      if (data.audioUrl) {
+        audioPlayer.src = data.audioUrl;
+        audioPlayer.style.display = "block";
+      } else {
+        alert("Error: " + (data.message || "No audio returned"));
+      }
+    });
+  </script>
+</body>
+</html>
