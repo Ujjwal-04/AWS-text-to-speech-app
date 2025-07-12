@@ -189,7 +189,7 @@ This project uses only AWS Free Tier limits:
 **[Ujjwal Wadhai]**  
 Aspiring Cloud Developer & AWS Enthusiast
 
-🔗 GitHub: [your-username] 
+🔗 GitHub: [https://github.com/Ujjwal-04)] 
 🔗 LinkedIn: [www.linkedin.com/in/ujjwal-wadhai] 
 🎯 Resume project: ✅
 
