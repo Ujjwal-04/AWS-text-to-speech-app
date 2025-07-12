@@ -187,7 +187,6 @@ This project uses only AWS Free Tier limits:
 ## 👋 Author
 
 **[Ujjwal Wadhai]**  
-Aspiring Cloud Developer & AWS Enthusiast
 
 🔗 GitHub: [https://github.com/Ujjwal-04)] 
 🔗 LinkedIn: [www.linkedin.com/in/ujjwal-wadhai] 
